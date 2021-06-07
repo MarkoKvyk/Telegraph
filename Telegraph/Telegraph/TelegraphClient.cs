@@ -2,9 +2,12 @@
 using Kvyk.Telegraph.Models;
 using Kvyk.Telegraph.Models.Requests;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -324,6 +327,81 @@ namespace Kvyk.Telegraph
             var result = await SendRequest<PageViews>(Constants.GetViews, GetJsonContent(request));
 
             return ReturnResult(result);
+        }
+
+        #endregion
+
+        #region File upload
+
+        /// <summary>
+        /// Upload files to telegraph cloud
+        /// </summary>
+        /// <param name="files">Files to upload. Files should be less then 5MB, available MIME types: image/gif, image/jpeg, image/jpg, image/png, video/mp4</param>
+        /// <returns>List of uploaded files</returns>
+        public async Task<List<TelegraphFile>> UploadFiles(IEnumerable<FileToUpload> files)
+        {
+            var requestContent = new MultipartFormDataContent();
+            requestContent.Headers.ContentType.MediaType = "multipart/form-data";
+
+            var availableTypes = new[] { "image/gif", "image/jpeg", "image/jpg", "image/png", "video/mp4" };
+
+            var index = 0;
+            foreach (var item in files)
+            {
+                if (!availableTypes.Contains(item.Type))
+                    throw new ArgumentException($"MIME type of file {index} is not available. Available types: {string.Join(", ", availableTypes)}");
+
+                var fileContent = new ByteArrayContent(item.Bytes);
+                fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse(item.Type);
+
+                var fileExtansion = new Regex(@"[^/]+/(?<ext>.+)").Match(item.Type).Groups["ext"].Value;
+
+                requestContent.Add(fileContent, $"file{index}", $"file{index}.{fileExtansion}");
+
+                index++;
+            }
+
+            JToken result;
+
+            using (var client = new HttpClient())
+            {
+                var response = await client.PostAsync(Constants.Upload, requestContent);
+                var content = await response.Content.ReadAsStringAsync();
+                result = JToken.Parse(content);
+            }
+
+            if(result.Type == JTokenType.Object)
+            {
+                var error = result["error"].ToString();
+
+                throw new TelegraphException(error);
+            }
+
+            var telegraphFiles = new List<TelegraphFile>();
+
+            if(result.Type == JTokenType.Array)
+            {
+                var list = result.ToObject<List<UploadedFile>>();
+
+                telegraphFiles = list.Select(v => new TelegraphFile
+                {
+                    Path = v.Src,
+                    Link = (Constants.TELEGPAPH + v.Src).Replace("//", "/"),
+                }).ToList();
+            }
+
+            return telegraphFiles;
+        }
+
+        /// <summary>
+        /// Upload file to telegraph cloud
+        /// </summary>
+        /// <param name="files">File to upload. File should be less then 5MB, available MIME types: image/gif, image/jpeg, image/jpg, image/png, video/mp4</param>
+        /// <returns>Uploaded file</returns>
+        public async Task<TelegraphFile> UploadFile(FileToUpload file)
+        {
+            var files = await UploadFiles(new[] { file });
+            return files.FirstOrDefault();
         }
 
         #endregion

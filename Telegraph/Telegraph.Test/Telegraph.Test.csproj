@@ -17,4 +17,10 @@
     <ProjectReference Include="..\Telegraph\Telegraph.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Telegraph_logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

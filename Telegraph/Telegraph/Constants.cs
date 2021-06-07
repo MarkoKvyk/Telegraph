@@ -3,6 +3,7 @@
     internal static class Constants
     {
         public const string TELEGPAPH_API = "https://api.telegra.ph/";
+        public const string TELEGPAPH = "https://telegra.ph/";
 
         public const string CREATE_ACCOUNT = "createAccount";
         public const string EDIT_ACCOUNT_INFO = "editAccountInfo";
@@ -13,6 +14,7 @@
         public const string GET_PAGE = "getPage";
         public const string GET_PAGE_LIST = "getPageList";
         public const string GET_VIEWS = "getViews";
+        public const string UPLOAD = "upload";
 
         public static string CreateAccount => TELEGPAPH_API + CREATE_ACCOUNT;
         public static string EditAccountInfo => TELEGPAPH_API + EDIT_ACCOUNT_INFO;
@@ -23,5 +25,6 @@
         public static string GetPage => TELEGPAPH_API + GET_PAGE;
         public static string GetPageList => TELEGPAPH_API + GET_PAGE_LIST;
         public static string GetViews => TELEGPAPH_API + GET_VIEWS;
+        public static string Upload => TELEGPAPH + UPLOAD;
     }
 }
