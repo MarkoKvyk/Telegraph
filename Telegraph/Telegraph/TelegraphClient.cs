@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Kvyk.Telegraph
@@ -200,11 +201,13 @@ namespace Kvyk.Telegraph
         /// Use this method to get a Telegraph page.
         /// <para/><see href="https://telegra.ph/api#getPage">Telegraph documentation</see>
         /// </summary>
-        /// <param name="path">Required. Path to the Telegraph page (in the format Title-12-31, i.e. everything that comes after http://telegra.ph/ ).</param>
+        /// <param name="path">Required. Path to the Telegraph page.</param>
         /// <returns>Returns a Page object on success.</returns>
         public async Task<Page> GetPage(string path)
         {
             ValidateStringParametr(path, nameof(path));
+
+            path = GetTelegraphPath(path);
 
             var request = new GetPage()
             {
@@ -243,7 +246,7 @@ namespace Kvyk.Telegraph
         /// Use this method to get the number of views for a Telegraph article.
         /// <para/><see href="https://telegra.ph/api#getViews">Telegraph documentation</see>
         /// </summary>
-        /// <param name="path">Required. Path to the Telegraph page (in the format Title-12-31, where 12 is the month and 31 the day the article was first published).</param>
+        /// <param name="path">Required. Path to the Telegraph page.</param>
         /// <param name="year">Required if month is passed. If passed, the number of page views for the requested year will be returned.</param>
         /// <param name="month">Required if day is passed. If passed, the number of page views for the requested month will be returned.</param>
         /// <param name="day">Required if hour is passed. If passed, the number of page views for the requested day will be returned.</param>
@@ -258,7 +261,7 @@ namespace Kvyk.Telegraph
         /// Use this method to get the number of views for a Telegraph article.
         /// <para/><see href="https://telegra.ph/api#getViews">Telegraph documentation</see>
         /// </summary>
-        /// <param name="path">Required. Path to the Telegraph page (in the format Title-12-31, where 12 is the month and 31 the day the article was first published).</param>
+        /// <param name="path">Required. Path to the Telegraph page.</param>
         /// <param name="year">Required if month is passed. If passed, the number of page views for the requested year will be returned.</param>
         /// <param name="month">Required if day is passed. If passed, the number of page views for the requested month will be returned.</param>
         /// <param name="day">Required if hour is passed. If passed, the number of page views for the requested day will be returned.</param>
@@ -272,7 +275,7 @@ namespace Kvyk.Telegraph
         /// Use this method to get the number of views for a Telegraph article.
         /// <para/><see href="https://telegra.ph/api#getViews">Telegraph documentation</see>
         /// </summary>
-        /// <param name="path">Required. Path to the Telegraph page (in the format Title-12-31, where 12 is the month and 31 the day the article was first published).</param>
+        /// <param name="path">Required. Path to the Telegraph page.</param>
         /// <param name="year">Required if month is passed. If passed, the number of page views for the requested year will be returned.</param>
         /// <param name="month">Required if day is passed. If passed, the number of page views for the requested month will be returned.</param>
         /// <returns>Returns a PageViews object on success. By default, the total number of page views will be returned.</returns>
@@ -285,7 +288,7 @@ namespace Kvyk.Telegraph
         /// Use this method to get the number of views for a Telegraph article.
         /// <para/><see href="https://telegra.ph/api#getViews">Telegraph documentation</see>
         /// </summary>
-        /// <param name="path">Required. Path to the Telegraph page (in the format Title-12-31, where 12 is the month and 31 the day the article was first published).</param>
+        /// <param name="path">Required. Path to the Telegraph page.</param>
         /// <param name="year">Required if month is passed. If passed, the number of page views for the requested year will be returned.</param>
         /// <returns>Returns a PageViews object on success. By default, the total number of page views will be returned.</returns>
         public async Task<PageViews> GetViews(string path, int year)
@@ -297,7 +300,7 @@ namespace Kvyk.Telegraph
         /// Use this method to get the number of views for a Telegraph article.
         /// <para/><see href="https://telegra.ph/api#getViews">Telegraph documentation</see>
         /// </summary>
-        /// <param name="path">Required. Path to the Telegraph page (in the format Title-12-31, where 12 is the month and 31 the day the article was first published).</param>
+        /// <param name="path">Required. Path to the Telegraph page.</param>
         /// <returns>Returns a PageViews object on success. By default, the total number of page views will be returned.</returns>
         public async Task<PageViews> GetViews(string path)
         {
@@ -307,6 +310,8 @@ namespace Kvyk.Telegraph
         private async Task<PageViews> GetViewsGeneral(string path, int? year = null, int? month = null, int? day = null, int? hour = null)
         {
             ValidateStringParametr(path, nameof(path));
+
+            path = GetTelegraphPath(path);
 
             var request = new GetViews()
             {
@@ -332,6 +337,7 @@ namespace Kvyk.Telegraph
         {
             var json = JsonConvert.SerializeObject(data);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
+            content.Headers.ContentType.CharSet = null;
             return content;
         }
 
@@ -373,6 +379,26 @@ namespace Kvyk.Telegraph
 
             if (parametr == string.Empty)
                 throw new ArgumentException("Should not be empty", name);
+        }
+
+        private string GetTelegraphPath(string path)
+        {
+            try
+            {
+                path = new Regex(@"(http(s)?://telegra.ph/)?(?<path>[^#]+)(#.+)?")
+                    .Match(path)
+                    .Groups["path"]?
+                    .Value;
+            }
+            catch (Exception)
+            {
+                throw new ArgumentException("Path is not valid");
+            }
+
+            if (string.IsNullOrEmpty(path))
+                throw new ArgumentException("Path is not valid");
+
+            return path;
         }
 
         #endregion

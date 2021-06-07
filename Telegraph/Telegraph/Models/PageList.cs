@@ -8,6 +8,7 @@ namespace Kvyk.Telegraph.Models
     /// This object represents a list of Telegraph articles belonging to an account. Most recently created articles first.
     /// <para/><see href="https://telegra.ph/api#PageList">Telegraph documentation</see>
     /// </summary>
+    [JsonObject]
     public class PageList : IEnumerable<Page>
     {
         /// <summary>
