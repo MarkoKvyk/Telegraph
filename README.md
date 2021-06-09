@@ -67,13 +67,6 @@ var nodes = new List<Node>  //Page is an array of nodes
     Artibutes = new TagAttributes()
     {
       Src = "https://telegra.ph/images/logo.png"
-    },
-    Children = new List<Node>()
-    {
-      new Node()
-      {
-        Value = "Logo"
-      }
     }
   }
 };
