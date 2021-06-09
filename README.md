@@ -10,7 +10,7 @@ Install-Package Kvyk.Telegraph
 ```
 |Package Name|Release|Version|
 |:---:|:---:|---:|
-|`Kvyk.Telegraph`|[NuGet]()|1.0.0|
+|`Kvyk.Telegraph`|[NuGet](https://www.nuget.org/packages/Kvyk.Telegraph/)|1.0.0|
 
 ## How to use
 
