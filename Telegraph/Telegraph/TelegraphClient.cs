@@ -462,7 +462,7 @@ namespace Kvyk.Telegraph
         {
             try
             {
-                path = new Regex(@"(http(s)?://telegra.ph/)?(?<path>[^#]+)(#.+)?")
+                path = new Regex(@"((http(s)?://)?telegra.ph/)?(?<path>[^#]+)(#.+)?")
                     .Match(path)
                     .Groups["path"]?
                     .Value;

@@ -1,12 +1,36 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>Kvyk.Telegraph</RootNamespace>
+    <Authors>Marko Kvyk</Authors>
+    <Product>Kvyk.Telegraph</Product>
+    <PackageId>Kvyk.Telegraph</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/MarkoKvyk/Telegraph</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/MarkoKvyk/Telegraph</PackageProjectUrl>
+    <Company />
+    <PackageTags>c#, telegraph, telegra.ph, telegram, kvyk</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Version>1.0.0</Version>
+    <PackageVersion>1.0.0</PackageVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Description>
+      Simple to use api-client for Telegra.ph.
+      You can find all documentation on Wiki (https://github.com/MarkoKvyk/Telegraph/wiki)</Description>
+    <Title>Kvyk.Telegraph</Title>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
