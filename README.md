@@ -1,5 +1,3 @@
-# (Development in progress)
-
 # Kvyk.Telegraph
 Simple to use api-client for [Telegra.ph](https://telegra.ph).
 
