@@ -1,5 +1,3 @@
-# (Development in progress)
-
 # Kvyk.Telegraph
 Simple to use api-client for [Telegra.ph](https://telegra.ph).
 
@@ -67,13 +65,6 @@ var nodes = new List<Node>  //Page is an array of nodes
     Artibutes = new TagAttributes()
     {
       Src = "https://telegra.ph/images/logo.png"
-    },
-    Children = new List<Node>()
-    {
-      new Node()
-      {
-        Value = "Logo"
-      }
     }
   }
 };
