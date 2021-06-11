@@ -187,7 +187,7 @@ namespace Kvyk.Telegraph
             var request = new EditPage()
             {
                 AccessToken = AccessToken,
-                Path = path,
+                Path = GetTelegraphPath(path),
                 Title = title,
                 AuthorName = authorName,
                 AuthorUrl = authorUrl,
