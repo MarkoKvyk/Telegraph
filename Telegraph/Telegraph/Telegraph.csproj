@@ -12,14 +12,15 @@
     <Company />
     <PackageTags>c#, telegraph, telegra.ph, telegram, kvyk</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Version>1.0.0</Version>
-    <PackageVersion>1.0.0</PackageVersion>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
-    <Description>
-      Simple to use api-client for Telegra.ph.
-      You can find all documentation on Wiki (https://github.com/MarkoKvyk/Telegraph/wiki)</Description>
+    <Version>1.0.1</Version>
+    <PackageVersion>1.0.1</PackageVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <Description>Simple to use api-client for Telegra.ph.
+You can find all documentation on Wiki (https://github.com/MarkoKvyk/Telegraph/wiki)</Description>
     <Title>Kvyk.Telegraph</Title>
+    <PackageReleaseNotes>- Added implicit operator string to Node
+- Added static methods to Node, for all tags</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

@@ -10,7 +10,7 @@ Install-Package Kvyk.Telegraph
 ```
 |Package Name|Release|Version|
 |:---:|:---:|---:|
-|`Kvyk.Telegraph`|[NuGet]()|1.0.0|
+|`Kvyk.Telegraph`|[NuGet]()|1.0.1|
 
 ## How to use
 
@@ -37,36 +37,9 @@ Now we can create your first page
 ```C#
 var nodes = new List<Node>  //Page is an array of nodes
 {
-  new Node()
-  {
-    Tag = TagEnum.H3,
-    Children = new List<Node>()
-    {
-      new Node()
-      {
-        Value = "Test header"
-      }
-    }
-  },
-  new Node()
-  {
-    Tag = TagEnum.P,
-    Children = new List<Node>()
-    {
-      new Node()
-      {
-        Value = "Hello, World!"
-      }
-    }
-  },
-  new Node()
-  {
-    Tag = TagEnum.Img,
-    Artibutes = new TagAttributes()
-    {
-      Src = "https://telegra.ph/images/logo.png"
-    }
-  }
+  Node.H3("Test header"),
+  Node.P("Hello, World!"),
+  Node.ImageFigure("https://telegra.ph/images/logo.png", "Logo"),
 };
 
 var page = await client.CreatePage(
@@ -77,7 +50,7 @@ var page = await client.CreatePage(
 var url = page.Url; //Here is your page url
 ```
 
-The example of the created page: https://telegra.ph/Test-page-06-07-22
+The example of the created page: https://telegra.ph/Test-page-06-11
 
 ## How to help?
 

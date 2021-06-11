@@ -24,43 +24,9 @@ namespace Telegraph.Test
         {
             var nodes = new List<Node>()
             {
-                new Node()
-                {
-                    Tag = TagEnum.H3,
-                    Children = new List<Node>()
-                    {
-                        new Node()
-                        {
-                            Value = "Test header"
-                        }
-                    }
-                },
-                new Node()
-                {
-                    Tag = TagEnum.P,
-                    Children = new List<Node>()
-                    {
-                        new Node()
-                        {
-                            Value = "Hello, World!"
-                        }
-                    }
-                },
-                new Node()
-                {
-                    Tag = TagEnum.Img,
-                    Artibutes = new TagAttributes()
-                    {
-                        Src = "https://telegra.ph/images/logo.png"
-                    },
-                    Children = new List<Node>()
-                    {
-                        new Node()
-                        {
-                            Value = "Logo"
-                        }
-                    }
-                }
+                Node.H3("Test header"),
+                Node.P("Hello, World!"),
+                Node.ImageFigure("https://telegra.ph/images/logo.png", "Logo"),
             };
 
             try
@@ -88,43 +54,9 @@ namespace Telegraph.Test
         {
             var nodes = new List<Node>()
             {
-                new Node()
-                {
-                    Tag = TagEnum.H3,
-                    Children = new List<Node>()
-                    {
-                        new Node()
-                        {
-                            Value = "Test header 2"
-                        }
-                    }
-                },
-                new Node()
-                {
-                    Tag = TagEnum.P,
-                    Children = new List<Node>()
-                    {
-                        new Node()
-                        {
-                            Value = "Hello, World!"
-                        }
-                    }
-                },
-                new Node()
-                {
-                    Tag = TagEnum.Img,
-                    Artibutes = new TagAttributes()
-                    {
-                        Src = "https://telegra.ph/images/logo.png"
-                    },
-                    Children = new List<Node>()
-                    {
-                        new Node()
-                        {
-                            Value = "Logo"
-                        }
-                    }
-                }
+                Node.H3("Test header 2"),
+                Node.P("Hello, World!"),
+                Node.ImageFigure("https://telegra.ph/images/logo.png", "Logo"),
             };
 
             try
