@@ -12,7 +12,7 @@ namespace Kvyk.Telegraph.Models
     /// <para/><see href="https://telegra.ph/api#NodeElement">Telegraph documentation NodeElement</see>
     /// </summary>
     [JsonConverter(typeof(NodeConverter))]
-    public class Node
+    public partial class Node
     {
         /// <summary>
         /// The value of the node.
@@ -60,5 +60,30 @@ namespace Kvyk.Telegraph.Models
         /// </summary>
         [JsonProperty("children")]
         public List<Node> Children { get; set; }
+
+        #region Constructors
+
+        public Node()
+        {
+            Children = new List<Node>();
+        }
+
+        /// <summary>
+        /// New Node with Value
+        /// </summary>
+        public Node(string value)
+            : this()
+        {
+            Value = value;
+        }
+
+        #endregion
+
+        #region Conversion Operators
+
+        public static implicit operator string (Node node) => node.Value;
+        public static implicit operator Node (string value) => new(value);
+
+        #endregion
     }
 }
