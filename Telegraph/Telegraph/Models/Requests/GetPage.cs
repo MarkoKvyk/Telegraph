@@ -7,7 +7,7 @@ namespace Kvyk.Telegraph.Models.Requests
         /// <summary>
         /// Required. Path to the Telegraph page (in the format Title-12-31, i.e. everything that comes after http://telegra.ph/).
         /// </summary>
-        [JsonProperty("path")]
+        [JsonProperty("path", NullValueHandling = NullValueHandling.Ignore)]
         public string Path { get; set; }
 
         /// <summary>
