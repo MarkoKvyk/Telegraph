@@ -7,10 +7,10 @@ namespace Kvyk.Telegraph.Models
     /// </summary>
     public class TagAttributes
     {
-        [JsonProperty("href")]
+        [JsonProperty("href", NullValueHandling = NullValueHandling.Ignore)]
         public string Href { get; set; }
 
-        [JsonProperty("src")]
+        [JsonProperty("src", NullValueHandling = NullValueHandling.Ignore)]
         public string Src { get; set; }
     }
 }

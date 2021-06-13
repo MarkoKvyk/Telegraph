@@ -7,7 +7,7 @@ namespace Kvyk.Telegraph.Models.Requests
         /// <summary>
         /// Required. Access token of the Telegraph account.
         /// </summary>
-        [JsonProperty("access_token")]
+        [JsonProperty("access_token", NullValueHandling = NullValueHandling.Ignore)]
         public string AccessToken { get; set; }
     }
 }

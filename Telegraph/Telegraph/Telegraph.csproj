@@ -7,20 +7,20 @@
     <Product>Kvyk.Telegraph</Product>
     <PackageId>Kvyk.Telegraph</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RepositoryUrl>https://github.com/MarkoKvyk/Telegraph</RepositoryUrl>
     <PackageProjectUrl>https://github.com/MarkoKvyk/Telegraph</PackageProjectUrl>
     <Company />
     <PackageTags>c#, telegraph, telegra.ph, telegram, kvyk</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Version>1.0.1</Version>
-    <PackageVersion>1.0.1</PackageVersion>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <FileVersion>1.0.1.0</FileVersion>
+    <Version>1.0.2</Version>
+    <PackageVersion>1.0.2</PackageVersion>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
     <Description>Simple to use api-client for Telegra.ph.
 You can find all documentation on Wiki (https://github.com/MarkoKvyk/Telegraph/wiki)</Description>
     <Title>Kvyk.Telegraph</Title>
-    <PackageReleaseNotes>- Added implicit operator string to Node
-- Added static methods to Node, for all tags</PackageReleaseNotes>
+    <PackageReleaseNotes>- Added NullValueHandling.Ignore for each Json property. Sometimes it brokes some APIs</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

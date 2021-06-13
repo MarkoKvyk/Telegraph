@@ -11,7 +11,7 @@ namespace Kvyk.Telegraph.Models
         /// <summary>
         /// Number of page views for the target page.
         /// </summary>
-        [JsonProperty("views")]
+        [JsonProperty("views", NullValueHandling = NullValueHandling.Ignore)]
         public int Views { get; set; }
     }
 }

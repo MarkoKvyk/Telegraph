@@ -12,25 +12,25 @@ namespace Kvyk.Telegraph.Models
         /// <summary>
         /// Path to the page.
         /// </summary>
-        [JsonProperty("path")]
+        [JsonProperty("path", NullValueHandling = NullValueHandling.Ignore)]
         public string Path { get; set; }
 
         /// <summary>
         /// URL of the page.
         /// </summary>
-        [JsonProperty("url")]
+        [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }
 
         /// <summary>
         /// Title of the page.
         /// </summary>
-        [JsonProperty("title")]
+        [JsonProperty("title", NullValueHandling = NullValueHandling.Ignore)]
         public string Title { get; set; }
 
         /// <summary>
         /// Description of the page.
         /// </summary>
-        [JsonProperty("description")]
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
@@ -54,13 +54,13 @@ namespace Kvyk.Telegraph.Models
         /// <summary>
         /// Optional. Content of the page.
         /// </summary>
-        [JsonProperty("content")]
+        [JsonProperty("content", NullValueHandling = NullValueHandling.Ignore)]
         public List<Node> Content { get; set; }
 
         /// <summary>
         /// Number of page views for the page.
         /// </summary>
-        [JsonProperty("views")]
+        [JsonProperty("views", NullValueHandling = NullValueHandling.Ignore)]
         public int Views { get; set; }
 
         /// <summary>

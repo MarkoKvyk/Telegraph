@@ -7,7 +7,7 @@ namespace Kvyk.Telegraph.Models.Requests
         /// <summary>
         /// Required. Path to the page.
         /// </summary>
-        [JsonProperty("path")]
+        [JsonProperty("path", NullValueHandling = NullValueHandling.Ignore)]
         public string Path { get; set; }
     }
 }

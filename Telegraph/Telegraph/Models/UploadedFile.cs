@@ -4,7 +4,7 @@ namespace Kvyk.Telegraph.Models
 {
     internal class UploadedFile
     {
-        [JsonProperty("src")]
+        [JsonProperty("src", NullValueHandling = NullValueHandling.Ignore)]
         public string Src { get; set; }
     }
 }

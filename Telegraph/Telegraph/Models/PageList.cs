@@ -20,7 +20,7 @@ namespace Kvyk.Telegraph.Models
         /// <summary>
         /// Requested pages of the target Telegraph account.
         /// </summary>
-        [JsonProperty("pages")]
+        [JsonProperty("pages", NullValueHandling = NullValueHandling.Ignore)]
         public List<Page> Pages { get; set; }
 
         #region IEnumarable implementation

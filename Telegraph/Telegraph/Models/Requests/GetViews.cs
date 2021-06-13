@@ -7,7 +7,7 @@ namespace Kvyk.Telegraph.Models.Requests
         /// <summary>
         /// Required. Path to the Telegraph page (in the format Title-12-31, where 12 is the month and 31 the day the article was first published).
         /// </summary>
-        [JsonProperty("path")]
+        [JsonProperty("path", NullValueHandling = NullValueHandling.Ignore)]
         public string Path { get; set; }
 
         /// <summary>
