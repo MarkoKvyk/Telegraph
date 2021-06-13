@@ -21,6 +21,7 @@
 You can find all documentation on Wiki (https://github.com/MarkoKvyk/Telegraph/wiki)</Description>
     <Title>Kvyk.Telegraph</Title>
     <PackageReleaseNotes>- Added NullValueHandling.Ignore for each Json property. Sometimes it brokes some APIs</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,6 +30,10 @@ You can find all documentation on Wiki (https://github.com/MarkoKvyk/Telegraph/w
 
   <ItemGroup>
     <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\README.md">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
