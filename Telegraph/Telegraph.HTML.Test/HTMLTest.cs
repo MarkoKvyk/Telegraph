@@ -1,14 +1,9 @@
-﻿using Kvyk.Telegraph;
-using Kvyk.Telegraph.Exceptions;
 using Kvyk.Telegraph.HTML;
-using Kvyk.Telegraph.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.IO;
 using System.Threading.Tasks;
 
-namespace Telegraph.Test
+namespace Telegraph.HTML.Test
 {
     [TestClass]
     public class HTMLTest
@@ -16,7 +11,7 @@ namespace Telegraph.Test
         public TestContext TestContext { get; set; }
 
         [TestMethod]
-        public async Task Parse()
+        public async Task TestMethod1()
         {
             var parser = new TelegraphHTML();
 
@@ -24,6 +19,5 @@ namespace Telegraph.Test
 
             TestContext.WriteLine(JsonConvert.SerializeObject(value));
         }
-
     }
 }

@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Telegraph.HTML\Telegraph.HTML.csproj" />
     <ProjectReference Include="..\Telegraph\Telegraph.csproj" />
   </ItemGroup>
 
