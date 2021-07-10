@@ -14,16 +14,16 @@
     <Company />
     <PackageTags>c#, telegraph, telegra.ph, html, telegram, kvyk</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Version>1.1.0</Version>
-    <PackageVersion>1.1.0</PackageVersion>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <FileVersion>1.1.0.0</FileVersion>
+    <Version>1.1.1</Version>
+    <PackageVersion>1.1.1</PackageVersion>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <FileVersion>1.1.1.0</FileVersion>
     <Description>
       HTML and Markdown parser for Telegraph library Kvyk.Telegraph
       You can find all documentation on Wiki (https://github.com/MarkoKvyk/Telegraph/wiki)
     </Description>
     <Title>Kvyk.Telegraph.Parsers</Title>
-    <PackageReleaseNotes>- Initial release</PackageReleaseNotes>
+    <PackageReleaseNotes>- Updated depended NuGet version</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
