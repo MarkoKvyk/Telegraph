@@ -13,14 +13,14 @@
     <Company />
     <PackageTags>c#, telegraph, telegra.ph, telegram, kvyk</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Version>1.0.2</Version>
-    <PackageVersion>1.0.2</PackageVersion>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
+    <Version>1.1.0</Version>
+    <PackageVersion>1.1.0</PackageVersion>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
     <Description>Simple to use api-client for Telegra.ph.
 You can find all documentation on Wiki (https://github.com/MarkoKvyk/Telegraph/wiki)</Description>
     <Title>Kvyk.Telegraph</Title>
-    <PackageReleaseNotes>- Added NullValueHandling.Ignore for each Json property. Sometimes it brokes some APIs</PackageReleaseNotes>
+    <PackageReleaseNotes>- Updated to 1.1.0</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
