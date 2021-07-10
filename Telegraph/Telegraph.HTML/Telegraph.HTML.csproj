@@ -1,31 +1,33 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Kvyk.Telegraph</RootNamespace>
+    <RootNamespace>Kvyk.Telegraph.HTML</RootNamespace>
     <Authors>Marko Kvyk</Authors>
-    <Product>Kvyk.Telegraph</Product>
-    <PackageId>Kvyk.Telegraph</PackageId>
+    <Product>Kvyk.Telegraph.HTML</Product>
+    <PackageId>Kvyk.Telegraph.HTML</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RepositoryUrl>https://github.com/MarkoKvyk/Telegraph</RepositoryUrl>
     <PackageProjectUrl>https://github.com/MarkoKvyk/Telegraph</PackageProjectUrl>
     <Company />
-    <PackageTags>c#, telegraph, telegra.ph, telegram, kvyk</PackageTags>
+    <PackageTags>c#, telegraph, telegra.ph, html, telegram, kvyk</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Version>1.1.0</Version>
     <PackageVersion>1.1.0</PackageVersion>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
     <FileVersion>1.1.0.0</FileVersion>
-    <Description>Simple to use api-client for Telegra.ph.
-You can find all documentation on Wiki (https://github.com/MarkoKvyk/Telegraph/wiki)</Description>
-    <Title>Kvyk.Telegraph</Title>
-    <PackageReleaseNotes>- Updated to 1.1.0</PackageReleaseNotes>
+    <Description>HTML parser for Telegraph library Kvyk.Telegraph
+You can find all documentation on Wiki (https://github.com/MarkoKvyk/Telegraph/wiki)
+    </Description>
+    <Title>Kvyk.Telegraph.HTML</Title>
+    <PackageReleaseNotes>- Initial release</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.34" />
+    <PackageReference Include="Kvyk.Telegraph" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup>
