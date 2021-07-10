@@ -26,7 +26,7 @@ jobs:
       run: dotnet test Telegraph/Telegraph.Test/Telegraph.Test.csproj
       
     - name: Test Kvyk.Telegraph.Parsers
-      run: dotnet test Telegraph/Telegraph.Parsers.Test/Telegraph.Parsers.csproj
+      run: dotnet test Telegraph/Telegraph.Parsers.Test/Telegraph.Parsers.Test.csproj
       
     - name: Publish Kvyk.Telegraph
       uses: brandedoutcast/publish-nuget@v2
