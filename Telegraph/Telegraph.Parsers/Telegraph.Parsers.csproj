@@ -29,7 +29,7 @@
 
   <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.11.34" />
-    <PackageReference Include="Kvyk.Telegraph" Version="1.1.0" />
+    <PackageReference Include="Kvyk.Telegraph" Version="1.0.2" />
     <PackageReference Include="Markdig" Version="0.25.0" />
   </ItemGroup>
 
