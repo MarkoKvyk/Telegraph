@@ -10,23 +10,23 @@ namespace Telegraph.Markdown.Test
     {
         public TestContext TestContext { get; set; }
 
-        [TestMethod]
-        public async Task ParseMarkdown()
-        {
-            var parser = new TelegraphMarkdown();
+//        [TestMethod]
+//        public async Task ParseMarkdown()
+//        {
+//            var parser = new TelegraphMarkdown();
 
-            var value = await parser.ParseMarkdownAsync(
-@"# Hello
-## Hello2
-World **LOL**
-1. one
-1. two
-1. three
----
-"
-            );
+//            var value = await parser.ParseMarkdownAsync(
+//@"# Hello
+//## Hello2
+//World **LOL**
+//1. one
+//1. two
+//1. three
+//---
+//"
+//            );
 
-            TestContext.WriteLine(JsonConvert.SerializeObject(value));
-        }
+//            TestContext.WriteLine(JsonConvert.SerializeObject(value));
+//        }
     }
 }

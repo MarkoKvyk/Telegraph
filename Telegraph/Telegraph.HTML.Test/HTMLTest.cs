@@ -10,14 +10,14 @@ namespace Telegraph.HTML.Test
     {
         public TestContext TestContext { get; set; }
 
-        [TestMethod]
-        public async Task ParseHTML()
-        {
-            var parser = new TelegraphHTML();
+        //[TestMethod]
+        //public async Task ParseHTML()
+        //{
+        //    var parser = new TelegraphHTML();
 
-            var value = await parser.ParseHTMLAsync("<h1>Hello</h1><p>world! <b>bold</b> word</p> and one? </br> more test");
+        //    var value = await parser.ParseHTMLAsync("<h1>Hello</h1><p>world! <b>bold</b> word</p> and one? </br> more test");
 
-            TestContext.WriteLine(JsonConvert.SerializeObject(value));
-        }
+        //    TestContext.WriteLine(JsonConvert.SerializeObject(value));
+        //}
     }
 }

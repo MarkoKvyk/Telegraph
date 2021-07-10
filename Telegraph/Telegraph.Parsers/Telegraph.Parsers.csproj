@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Kvyk.Telegraph.Parsers</RootNamespace>
+
+    <Authors>Marko Kvyk</Authors>
+    <Product>Kvyk.Telegraph.Parsers</Product>
+    <PackageId>Kvyk.Telegraph.Parsers</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <RepositoryUrl>https://github.com/MarkoKvyk/Telegraph</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/MarkoKvyk/Telegraph</PackageProjectUrl>
+    <Company />
+    <PackageTags>c#, telegraph, telegra.ph, html, telegram, kvyk</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Version>1.1.0</Version>
+    <PackageVersion>1.1.0</PackageVersion>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
+    <Description>
+      HTML and Markdown parser for Telegraph library Kvyk.Telegraph
+      You can find all documentation on Wiki (https://github.com/MarkoKvyk/Telegraph/wiki)
+    </Description>
+    <Title>Kvyk.Telegraph.Parsers</Title>
+    <PackageReleaseNotes>- Initial release</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.34" />
+    <PackageReference Include="Kvyk.Telegraph" Version="1.0.2" />
+    <PackageReference Include="Markdig" Version="0.25.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+  
+</Project>

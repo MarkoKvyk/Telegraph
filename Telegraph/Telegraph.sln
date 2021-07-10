@@ -22,9 +22,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FB924CAF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGets", "NuGets", "{8731A2CB-09E1-4287-9333-657275449D86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telegraph.Markdown", "Telegraph.Markdown\Telegraph.Markdown.csproj", "{CE4E4C87-0FFA-4B84-A83B-E64C84E6D746}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telegraph.Markdown", "Telegraph.Markdown\Telegraph.Markdown.csproj", "{CE4E4C87-0FFA-4B84-A83B-E64C84E6D746}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telegraph.Markdown.Test", "Telegraph.Markdown.Test\Telegraph.Markdown.Test.csproj", "{E9E97430-409E-4D85-9068-8FE5F7285CF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telegraph.Markdown.Test", "Telegraph.Markdown.Test\Telegraph.Markdown.Test.csproj", "{E9E97430-409E-4D85-9068-8FE5F7285CF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telegraph.Parsers", "Telegraph.Parsers\Telegraph.Parsers.csproj", "{36B03DDE-1758-4CA6-88DB-425BBFDC8043}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telegraph.Parsers.Test", "Telegraph.Parsers.Test\Telegraph.Parsers.Test.csproj", "{E615E029-6FA8-4F5A-B684-9BA89532F306}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +60,14 @@ Global
 		{E9E97430-409E-4D85-9068-8FE5F7285CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9E97430-409E-4D85-9068-8FE5F7285CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9E97430-409E-4D85-9068-8FE5F7285CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36B03DDE-1758-4CA6-88DB-425BBFDC8043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36B03DDE-1758-4CA6-88DB-425BBFDC8043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36B03DDE-1758-4CA6-88DB-425BBFDC8043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36B03DDE-1758-4CA6-88DB-425BBFDC8043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E615E029-6FA8-4F5A-B684-9BA89532F306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E615E029-6FA8-4F5A-B684-9BA89532F306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E615E029-6FA8-4F5A-B684-9BA89532F306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E615E029-6FA8-4F5A-B684-9BA89532F306}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +79,8 @@ Global
 		{6D95F691-B822-4B84-8C5F-E35DA402519B} = {FB924CAF-2B6D-41FE-9BB5-E6B91AE74256}
 		{CE4E4C87-0FFA-4B84-A83B-E64C84E6D746} = {8731A2CB-09E1-4287-9333-657275449D86}
 		{E9E97430-409E-4D85-9068-8FE5F7285CF5} = {FB924CAF-2B6D-41FE-9BB5-E6B91AE74256}
+		{36B03DDE-1758-4CA6-88DB-425BBFDC8043} = {8731A2CB-09E1-4287-9333-657275449D86}
+		{E615E029-6FA8-4F5A-B684-9BA89532F306} = {FB924CAF-2B6D-41FE-9BB5-E6B91AE74256}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19D066D4-516C-4D63-A928-09D97E2DF039}
