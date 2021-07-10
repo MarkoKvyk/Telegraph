@@ -2,8 +2,6 @@
 name: Publish NuGet
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -20,12 +18,31 @@ jobs:
         dotnet-version: 5.0.102
     - name: Install dependencies
       run: dotnet restore Telegraph/Telegraph.sln
+      
     - name: Build
       run: dotnet build Telegraph/Telegraph.sln --configuration Release --no-restore 
-    - name: Tests
+      
+    - name: Test Kvyk.Telegraph
       run: dotnet test Telegraph/Telegraph.Test/Telegraph.Test.csproj
+      
+    - name: Test Kvyk.Telegraph.Parsers
+      run: dotnet test Telegraph/Telegraph.Parsers.Test/Telegraph.Parsers.csproj
+      
     - name: Publish Kvyk.Telegraph
       uses: brandedoutcast/publish-nuget@v2
       with:
           PROJECT_FILE_PATH: Telegraph/Telegraph/Telegraph.csproj
           NUGET_KEY: ${{secrets.NUGET_KEY}}
+
+    - name: Publish Kvyk.Telegraph.Parsers
+      uses: brandedoutcast/publish-nuget@v2
+      with:
+          PROJECT_FILE_PATH: Telegraph/Telegraph.Parsers/Telegraph.Parsers.csproj
+          NUGET_KEY: ${{secrets.NUGET_KEY}}
+
+
+
+
+
+
+
