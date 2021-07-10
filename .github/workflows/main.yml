@@ -1,0 +1,31 @@
+
+name: Publish NuGet
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.102
+    - name: Install dependencies
+      run: dotnet restore Telegraph/Telegraph.sln
+    - name: Build
+      run: dotnet build Telegraph/Telegraph.sln --configuration Release --no-restore 
+    - name: Tests
+      run: dotnet test Telegraph/Telegraph.Test/Telegraph.Test.csproj
+    - name: Publish Kvyk.Telegraph
+      uses: brandedoutcast/publish-nuget@v2
+      with:
+          PROJECT_FILE_PATH: Telegraph/Telegraph/Telegraph.csproj
+          NUGET_KEY: ${{secrets.NUGET_KEY}}

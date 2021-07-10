@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		..\.gitignore = ..\.gitignore
 		..\LICENSE = ..\LICENSE
+		..\.github\workflows\main.yml = ..\.github\workflows\main.yml
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
@@ -29,6 +30,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telegraph.Parsers", "Telegraph.Parsers\Telegraph.Parsers.csproj", "{36B03DDE-1758-4CA6-88DB-425BBFDC8043}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telegraph.Parsers.Test", "Telegraph.Parsers.Test\Telegraph.Parsers.Test.csproj", "{E615E029-6FA8-4F5A-B684-9BA89532F306}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GithubActions", "GithubActions", "{543304DE-01AB-484D-A515-51F8A8796F90}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\main.yml = ..\.github\workflows\main.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +87,9 @@ Global
 		{E9E97430-409E-4D85-9068-8FE5F7285CF5} = {FB924CAF-2B6D-41FE-9BB5-E6B91AE74256}
 		{36B03DDE-1758-4CA6-88DB-425BBFDC8043} = {8731A2CB-09E1-4287-9333-657275449D86}
 		{E615E029-6FA8-4F5A-B684-9BA89532F306} = {FB924CAF-2B6D-41FE-9BB5-E6B91AE74256}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{543304DE-01AB-484D-A515-51F8A8796F90} = {4126B773-C84E-4618-A4B5-0AA9AA1CC500}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19D066D4-516C-4D63-A928-09D97E2DF039}
