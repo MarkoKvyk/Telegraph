@@ -11,7 +11,7 @@ namespace Telegraph.HTML.Test
         public TestContext TestContext { get; set; }
 
         [TestMethod]
-        public async Task TestMethod1()
+        public async Task ParseHTML()
         {
             var parser = new TelegraphHTML();
 

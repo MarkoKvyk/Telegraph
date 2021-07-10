@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Kvyk.Telegraph.Markdown</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Kvyk.Telegraph" Version="1.0.2" />
+    <PackageReference Include="Markdig" Version="0.25.0" />
+  </ItemGroup>
+
+</Project>
