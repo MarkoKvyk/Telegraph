@@ -386,7 +386,7 @@ namespace Kvyk.Telegraph
                 telegraphFiles = list.Select(v => new TelegraphFile
                 {
                     Path = v.Src,
-                    Link = (Constants.TELEGPAPH + v.Src).Replace("//", "/"),
+                    Link = (Constants.TELEGPAPH + v.Src[1..])
                 }).ToList();
             }
 
