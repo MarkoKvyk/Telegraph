@@ -1,4 +1,3 @@
-
 name: Publish NuGet
 
 on:
@@ -15,34 +14,18 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.102
+        dotnet-version: 7.0.311
     - name: Install dependencies
       run: dotnet restore Telegraph/Telegraph.sln
       
     - name: Build
       run: dotnet build Telegraph/Telegraph.sln --configuration Release --no-restore 
       
-    - name: Test Kvyk.Telegraph
+    - name: Test Telegraph
       run: dotnet test Telegraph/Telegraph.Test/Telegraph.Test.csproj
       
-    - name: Test Kvyk.Telegraph.Parsers
-      run: dotnet test Telegraph/Telegraph.Parsers.Test/Telegraph.Parsers.Test.csproj
-      
-    - name: Publish Kvyk.Telegraph
+    - name: Publish Telegraph
       uses: brandedoutcast/publish-nuget@v2
       with:
           PROJECT_FILE_PATH: Telegraph/Telegraph/Telegraph.csproj
           NUGET_KEY: ${{secrets.NUGET_KEY}}
-
-    - name: Publish Kvyk.Telegraph.Parsers
-      uses: brandedoutcast/publish-nuget@v2
-      with:
-          PROJECT_FILE_PATH: Telegraph/Telegraph.Parsers/Telegraph.Parsers.csproj
-          NUGET_KEY: ${{secrets.NUGET_KEY}}
-
-
-
-
-
-
-
