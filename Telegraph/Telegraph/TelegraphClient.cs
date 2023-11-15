@@ -1,4 +1,4 @@
-﻿using Kvyk.Telegraph.Exceptions;
+using Kvyk.Telegraph.Exceptions;
 using Kvyk.Telegraph.Models;
 using Kvyk.Telegraph.Models.Requests;
 using Newtonsoft.Json;
@@ -383,12 +383,7 @@ namespace Kvyk.Telegraph
             {
                 var list = result.ToObject<List<UploadedFile>>();
 
-                telegraphFiles = list.Select(v => new TelegraphFile
-                {
-                    Path = v.Src,
-                    Link = (Constants.TELEGPAPH + v.Src).Replace("//", "/"),
-                }).ToList();
-            }
+			Link = (Constants.TELEGPAPH + v.Src[1..])
 
             return telegraphFiles;
         }
