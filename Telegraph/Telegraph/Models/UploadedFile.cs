@@ -1,10 +1,9 @@
 ﻿using Newtonsoft.Json;
 
-namespace Kvyk.Telegraph.Models
+namespace Telegraph.Models;
+
+internal class UploadedFile
 {
-    internal class UploadedFile
-    {
-        [JsonProperty("src", NullValueHandling = NullValueHandling.Ignore)]
-        public string Src { get; set; }
-    }
+	[JsonProperty("src", NullValueHandling = NullValueHandling.Ignore)]
+	public string Src { get; set; }
 }

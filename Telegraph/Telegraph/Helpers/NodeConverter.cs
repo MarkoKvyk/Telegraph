@@ -1,101 +1,102 @@
-﻿using Kvyk.Telegraph.Models;
+﻿using System;
+using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Linq;
+using Node = Telegraph.Models.Node;
 
-namespace Kvyk.Telegraph.Helpers
+namespace Telegraph.Helpers;
+
+/// <summary>
+///   Converter for <see cref="Node" />.
+/// </summary>
+internal class NodeConverter : JsonConverter
 {
-    internal class NodeConverter : JsonConverter
-    {
-        public override bool CanConvert(Type objectType)
-        {
-            return (objectType == typeof(Node));
-        }
+	public override bool CanConvert(Type objectType)
+	{
+		return (objectType == typeof(Node));
+	}
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-        {
-            var node = new Node();
+	public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+	{
+		var node = new Node();
 
-            var token = JToken.Load(reader);
+		var token = JToken.Load(reader);
 
-            if (token.Type == JTokenType.Object)
-            {
-                var type = typeof(Node);
+		if (token.Type == JTokenType.Object)
+		{
+			var type = typeof(Node);
 
-                foreach (var item in type.GetProperties())
-                {
-                    var name = item.Name;
-                    var attrs = item.GetCustomAttributes(false);
+			foreach (var item in type.GetProperties())
+			{
+				string name = item.Name;
+				object[] attrs = item.GetCustomAttributes(false);
 
-                    if (!attrs.Where(v => v.GetType() == typeof(JsonIgnoreAttribute)).Any())
-                    {
-                        foreach (JsonPropertyAttribute attr in attrs.Where(v => v.GetType() == typeof(JsonPropertyAttribute)))
-                        {
-                            name = attr.PropertyName;
-                        }
-                    }
-                    else
-                    {
-                        continue;
-                    }
+				if (!attrs.Any(v => v is JsonIgnoreAttribute))
+				{
+					foreach (JsonPropertyAttribute attr in attrs.Where(v => v is JsonPropertyAttribute))
+					{
+						name = attr.PropertyName;
+					}
+				}
+				else
+				{
+					continue;
+				}
 
-                    item.SetValue(node, token[name]?.ToObject(item.PropertyType));
-                }
+				item.SetValue(node, token[name]?.ToObject(item.PropertyType));
+			}
 
-                return node;
-            }
-            else
-            {
-                node.Value = token.ToString();
-                return node;
-            }
-        }
+			return node;
+		}
 
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-        {
-            var node = (Node)value;
+		node.Value = token.ToString();
+		return node;
+	}
 
-            if (node.Value != null)
-            {
-                writer.WriteValue(node.Value);
-            }
-            else
-            {
-                writer.WriteStartObject();
+	public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+	{
+		var node = (Node) value;
 
-                var type = value.GetType();
+		if (node?.Value != null)
+		{
+			writer.WriteValue(node.Value);
+		}
+		else
+		{
+			writer.WriteStartObject();
 
-                foreach (var item in type.GetProperties().Where(v => v.Name != nameof(Node.Children)))
-                {
-                    var name = item.Name;
-                    var attrs = item.GetCustomAttributes(false);
+			var type = value.GetType();
 
-                    if (!attrs.Where(v => v.GetType() == typeof(JsonIgnoreAttribute)).Any())
-                    {
-                        foreach (JsonPropertyAttribute attr in attrs.Where(v => v.GetType() == typeof(JsonPropertyAttribute)))
-                        {
-                            name = attr.PropertyName;
-                        }
-                        writer.WritePropertyName(name);
-                        serializer.Serialize(writer, item.GetValue(value));
-                    }
-                }
+			foreach (var item in type.GetProperties().Where(v => v.Name != nameof(Node.Children)))
+			{
+				string name = item.Name;
+				object[] attrs = item.GetCustomAttributes(false);
 
-                var childrenProp = type.GetProperties().FirstOrDefault(v => v.Name == nameof(Node.Children));
-                var clildrenName = childrenProp.Name;
+				if (!attrs.Any(v => v is JsonIgnoreAttribute))
+				{
+					foreach (JsonPropertyAttribute attr in attrs.Where(v => v is JsonPropertyAttribute))
+					{
+						name = attr.PropertyName;
+					}
 
-                var childrenPropAtrs = childrenProp.GetCustomAttributes(false);
-                foreach (JsonPropertyAttribute attr in childrenPropAtrs.Where(v => v.GetType() == typeof(JsonPropertyAttribute)))
-                {
-                    clildrenName = attr.PropertyName;
-                }
+					writer.WritePropertyName(name);
+					serializer.Serialize(writer, item.GetValue(value));
+				}
+			}
 
-                writer.WritePropertyName(clildrenName);
-                serializer.Serialize(writer, childrenProp.GetValue(value));
+			var childrenProp = type.GetProperties().FirstOrDefault(v => v.Name == nameof(Node.Children));
+			string clildrenName = childrenProp.Name;
 
-                writer.WriteEndObject();
-            }
-        }
-    }
+			object[] childrenPropAtrs = childrenProp.GetCustomAttributes(false);
+			foreach (JsonPropertyAttribute attr in childrenPropAtrs.Where(v => v is JsonPropertyAttribute))
+			{
+				clildrenName = attr.PropertyName;
+			}
+
+			writer.WritePropertyName(clildrenName);
+			serializer.Serialize(writer, childrenProp.GetValue(value));
+
+			writer.WriteEndObject();
+		}
+	}
 }

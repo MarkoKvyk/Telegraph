@@ -1,16 +1,15 @@
 ﻿using Newtonsoft.Json;
 
-namespace Kvyk.Telegraph.Models
+namespace Telegraph.Models;
+
+internal class TelegraphAPIResponse<T>
 {
-    internal class TelegraphAPIResponse<T>
-    {
-        [JsonProperty("ok", NullValueHandling = NullValueHandling.Ignore)]
-        public bool Ok { get; set; }
+	[JsonProperty("ok", NullValueHandling = NullValueHandling.Ignore)]
+	public bool Ok { get; set; }
 
-        [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
-        public T Result { get; set; }
+	[JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
+	public T Result { get; set; }
 
-        [JsonProperty("error", NullValueHandling = NullValueHandling.Ignore)]
-        public string Error { get; set; }
-    }
+	[JsonProperty("error", NullValueHandling = NullValueHandling.Ignore)]
+	public string Error { get; set; }
 }
