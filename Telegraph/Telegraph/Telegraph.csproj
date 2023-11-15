@@ -1,31 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Kvyk.Telegraph</RootNamespace>
-    <Authors>Marko Kvyk</Authors>
-    <Product>Kvyk.Telegraph</Product>
-    <PackageId>Kvyk.Telegraph</PackageId>
+    <TargetFramework>net7.0</TargetFramework>
+    <Authors>Marko Kvyk, Frederic Rousseau</Authors>
+    <Product>Caelestis.Telegraph</Product>
+    <PackageId>Caelestis.Telegraph</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <RepositoryUrl>https://github.com/MarkoKvyk/Telegraph</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/MarkoKvyk/Telegraph</PackageProjectUrl>
-    <Company />
-    <PackageTags>c#, telegraph, telegra.ph, telegram, kvyk</PackageTags>
+    <RepositoryUrl>https://github.com/Caelestis94/Telegraph</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Caelestis94/Telegraph</PackageProjectUrl>
+    <Company>Frederic Rousseau</Company>
+    <PackageTags>c#, telegraph, telegra.ph, telegram, kvyk, Caelestis</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Version>1.1.0</Version>
-    <PackageVersion>1.1.0</PackageVersion>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <FileVersion>1.1.0.0</FileVersion>
-    <Description>Simple to use api-client for Telegra.ph.
+    <PackageVersion>1.2.0</PackageVersion>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
+    <Description>Fork of Kvyk.Telegraph with bug fixes, updated dependencies and Interfaces for testing.
+
+Simple to use api-client for Telegra.ph.
 You can find all documentation on Wiki (https://github.com/MarkoKvyk/Telegraph/wiki)</Description>
     <Title>Kvyk.Telegraph</Title>
-    <PackageReleaseNotes>- Updated to 1.1.0</PackageReleaseNotes>
+    <PackageReleaseNotes>- Fixed uploaded image url
+- Added Interface for mocking
+- Updated dependencies and Targeted Framework to 7.0</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <LangVersion>11</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
