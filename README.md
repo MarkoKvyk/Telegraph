@@ -1,7 +1,12 @@
-# Kvyk.Telegraph
+# Caelestis.Telegraph
+Forked from [MarkoKvyk/Telegraph](https://github.com/MarkoKvyk/Telegraph)
+
+This client was forked to update the dependencies and target .NET 7.0
+An interface for TelegraphClient was added to allow for mocking in unit tests if needed.
+
 Simple to use api-client for [Telegra.ph](https://telegra.ph).
 
-C# .NET 5.0
+C# .NET 7.0
 
 ## Installation
 Install last varsion
@@ -10,7 +15,7 @@ Install-Package Kvyk.Telegraph
 ```
 |Package Name|Release|Version|
 |:---:|:---:|---:|
-|`Kvyk.Telegraph`|[NuGet](https://www.nuget.org/packages/Kvyk.Telegraph/)|1.0.2|
+|`Caelestis.Telegraph`|[NuGet](https://www.nuget.org/packages/Caelestis.Telegraph/)|1.2.0|
 
 ## How to use
 
@@ -20,10 +25,10 @@ You can find all documentation on [Wiki](https://github.com/MarkoKvyk/Telegraph/
 
 Add `using` to the top of your file
 ```C#
-using Kvyk.Telegraph;
-using Kvyk.Telegraph.Models;
+using Caelestis.Telegraph;
+using Caelestis.Telegraph.Models;
 ```
-Let's create first account
+Let's create an account first
 ```C#
 var client = new TelegraphClient();
 Account account = await client.CreateAccount(
@@ -54,8 +59,4 @@ The example of the created page: https://telegra.ph/Test-page-06-11
 
 ## How to help?
 
-This is my first NuGet package, so I'm waiting for a feedback!
-
-Please, tell me about any things I've missed or skiped, any features about code and comments, project description and design of repo. I will be happy to get any feedback.
-
-Use issues or just send me email: `kvykmarko@gmail.com`
+If you want to help me, you can create an issue or a pull request.
