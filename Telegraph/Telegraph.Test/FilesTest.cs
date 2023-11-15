@@ -1,11 +1,12 @@
-﻿using Kvyk.Telegraph;
-using Kvyk.Telegraph.Exceptions;
-using Kvyk.Telegraph.Models;
+﻿using Telegraph;
+using Telegraph.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using Telegraph.Exceptions;
+using Telegraph.Models;
 
 namespace Telegraph.Test
 {
@@ -25,7 +26,7 @@ namespace Telegraph.Test
                 {
                     new FileToUpload
                     {
-                        Bytes = File.ReadAllBytes("Telegraph_logo.png"),
+                        Bytes = File.ReadAllBytes("Ressources/Telegraph_logo.png"),
                         Type = "image/png"
                     }
                 };
@@ -51,7 +52,7 @@ namespace Telegraph.Test
 
                 var file = new FileToUpload
                 {
-                    Bytes = File.ReadAllBytes("Telegraph_logo.png"),
+                    Bytes = File.ReadAllBytes("Ressources/Telegraph_logo.png"),
                     Type = "image/png"
                 };
 

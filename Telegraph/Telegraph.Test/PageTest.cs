@@ -1,10 +1,12 @@
-﻿using Kvyk.Telegraph;
-using Kvyk.Telegraph.Exceptions;
-using Kvyk.Telegraph.Models;
+﻿using Telegraph;
+using Telegraph.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Telegraph.Exceptions;
+using Telegraph.Models;
+using Node = Telegraph.Models.Node;
 
 namespace Telegraph.Test
 {
